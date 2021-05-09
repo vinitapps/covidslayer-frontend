@@ -18,6 +18,7 @@ const initGameState = {
 export default (state = initGameState, action) => {
     switch (action.type) {
       case 'game/updateHealth':
+        console.log(action.payload);
         let { playerHealth , covidMonsterHealth  } = action.payload ;
         return {
             ...state,

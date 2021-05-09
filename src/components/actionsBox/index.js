@@ -37,7 +37,13 @@ export default function ActionBox(){
             <Grid item xs={3} alignItems="stretch">
                 <Button variant="contained" color="primary"  onClick={() => {
 
-                    console.log( store.dispatch({ type : 'INCREMENT'}) ) ;
+                    console.log( store.dispatch({ 
+                        type : 'game/updateHealth', 
+                        payload  : {
+                            playerHealth : 20,
+                            covidMonsterHealth : 50
+                        }
+                    }) ) ;
 
                 }}>Blast</Button>
             </Grid>

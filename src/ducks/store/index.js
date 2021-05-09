@@ -1,5 +1,5 @@
-import counter from '../reducers/';
+import game from '../reducers/game';
 import { createStore } from 'redux';
 
-const store = createStore(counter);
+const store = createStore(game);
 export default store ;
