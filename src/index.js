@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Button from '@material-ui/core/Button';
+import { Provider } from 'react-redux';
+import store from './ducks/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Button onClick={() => {
+        store.dispatch({ type: 'INCREMENT' }); 
+      }} > Test </Button>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

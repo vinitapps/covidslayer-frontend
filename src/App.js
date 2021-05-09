@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Header from './layout/header';
+import Footer from './layout/footer';
+import Game from './screens/game';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    body: {
+      flexGrow: 1,
+      padding : 15 ,
+      paddingTop : 50,
+      paddingBottom : 50
+    }
+  }),
+);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+function About() {
+    return <h2>About</h2>;
 }
 
-export default App;
+  
+export default function App() {
+    const classes = useStyles();
+    return(
+        <Router>
+            <Header />
+            <div className={classes.body}>
+            <Switch>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/">
+                    <Game />
+                </Route>
+            </Switch>
+            </div>
+            <Footer />
+        </Router>
+    );
+}
