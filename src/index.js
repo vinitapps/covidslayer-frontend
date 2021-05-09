@@ -10,9 +10,6 @@ import store from './ducks/store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Button onClick={() => {
-        store.dispatch({ type: 'INCREMENT' }); 
-      }} > Test </Button>
       <App />
     </Provider>
   </React.StrictMode>,

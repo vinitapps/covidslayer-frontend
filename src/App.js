@@ -20,11 +20,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-
-function About() {
-    return <h2>About</h2>;
-}
-
   
 export default function App() {
     const classes = useStyles();
@@ -33,9 +28,6 @@ export default function App() {
             <Header />
             <div className={classes.body}>
             <Switch>
-                <Route path="/about">
-                    <About />
-                </Route>
                 <Route path="/">
                     <Game />
                 </Route>
